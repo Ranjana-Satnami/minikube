@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pyproj
+  labels:
+    app: pyproj
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pyproj
+  template:
+    metadata:
+      labels:
+        app: pyproj
+    spec:
+      containers:
+      - name: pyproj
+        image: ranjanasatnami/minikube:rnmini
+        ports:
+        - containerPort: 8888
+
